@@ -1,0 +1,50 @@
+{
+  "name": "ai-buble-loader",
+  "version": "1.0.0",
+  "description": "A lightweight React loader component. Uses Tailwind classes from the host app.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist/"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react --external react-dom --external framer-motion",
+    "prepublishOnly": "npm run build",
+    "test": "npm run build && vitest run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garvitthakral/Ai-buble-Loader.git"
+  },
+  "author": "Garvit Thakral",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/garvitthakral/Ai-buble-Loader/issues"
+  },
+  "homepage": "https://github.com/garvitthakral/Ai-buble-Loader#readme",
+  "peerDependencies": {
+    "framer-motion": ">=10",
+    "react": ">=17",
+    "react-dom": ">=17"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "jsdom": "^27.1.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.8"
+  }
+}
